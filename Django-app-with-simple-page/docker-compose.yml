@@ -1,6 +1,5 @@
 services:
   django-app:
-    build:
-      context: .
+    image: fzhussain/simple-django-app-via-jenkins:latest
     ports:
       - "8000:8000"
