@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Faraz Hussain - Profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+    }
+
+    header, footer {
+      background-color: #004d40;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      padding: 0 20px;
+    }
+
+    .section {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    h1 {
+        color: #c8f8f3;
+    }
+    h2, h3 {
+      color: #04897b;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #c8f8f3;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact-info p {
+      color: #c8f8f3;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Faraz Hussain</h1>
+    <div class="contact-info">
+      <p><a href="mailto:farazhussain503@gmail.com">farazhussain503@gmail.com</a> | <a href="https://www.linkedin.com/in/faraz-hussain/" target="_blank">LinkedIn</a> | <a href="https://github.com/fzhussain" target="_blank">GitHub</a> | +91 9082905016 | Mulund, MH, India</p>
+    </div>
+  </header>
+  
+  <div class="content">
+    <div class="section">
+      <h2>Education</h2>
+      <p><strong>University of Mumbai, Mumbai, India</strong></p>
+      <p>Bachelor of Engineering in Computer Engineering; CGPA: 9.21</p>
+      <p>August 2019 - May 2023</p>
+    </div>
+
+    <div class="section">
+      <h2>Skills Summary</h2>
+      <p><strong>Languages:</strong> Linux Shell Scripting, Python, SQL, JAVA, JavaScript</p>
+      <p><strong>Services & Tools:</strong> AWS (VPC, EC2, S3, CloudFront, ECR, ECS, Config, CLI, Lambda, CodeBuild, CodePipeline, CodeDeploy, Terraform, CloudWatch, IAM), GitHub, Linux, Docker, Jenkins</p>
+      <p><strong>Web Development:</strong> MongoDB, Express.js, ReactJS-Redux, NodeJS</p>
+      <p><strong>Soft skills:</strong> Interpersonal Communication, Team Leadership & Management, Adaptive & Agile</p>
+    </div>
+
+    <div class="section">
+      <h2>Work Experience</h2>
+      <h3>Analyst 1 | Accelya Services, Mumbai</h3>
+      <p>May 2024 - Present</p>
+      <ul>
+        <li>Designed and implemented system improvements, performed performance analysis, and automated processes using Shell scripting and cronjobs to ensure smooth operations and uninterrupted cash flow.</li>
+        <li>Automated historical data loading with Linux Shell scripting, reducing manual effort and improving efficiency.</li>
+        <li>Developed Python scripts to streamline payment rejection processing, making it faster and more accurate.</li>
+        <li>Identified and resolved errors and exceptions in Java-based microservices, implementing permanent and scalable solutions for long-term stability.</li>
+        <li>Assisted in preparing and planning AWS migration for portfolio products from on-premises infrastructure.</li>
+        <li>Managed change requests, tested updates in UAT, resolved code conflicts, and deployed fixes to production and on-premises server instances.</li>
+      </ul>
+
+      <h3>Spatial Data Specialist 1 | Here Technologies, Navi Mumbai</h3>
+      <p>October 2023 - April 2024</p>
+      <ul>
+        <li>Collaborated with the Database Engineering Team to implement AWS Athena, writing advanced SQL queries to extract and analyze high-volume datasets from AWS S3 and multiple product databases.</li>
+        <li>Used AWS EMR for large-scale data processing and utilized AWS Airflow for orchestrating ETL workflows.</li>
+        <li>Recommended and prototyped the automation of system verification processes, resulting in a 30% efficiency gain and earning recognition as a Best Practice by senior management.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Projects</h2>
+      <h3>Real-Time Monitoring of EC2 CPU with AWS CloudWatch</h3>
+      <ul>
+        <li>Developed a monitoring solution for AWS EC2 instances using AWS CloudWatch to track and analyze CPU utilization spikes, and set up detailed monitoring and alarms to automatically trigger alerts based on CPU utilization thresholds.</li>
+        <li>Created AWS SNS notifications for alarm triggers, configured CloudWatch Dashboards for visualization of CPU metrics, and implemented Python scripts to simulate CPU spikes for testing and validation.</li>
+      </ul>
+
+      <h3>EBS Snapshot Cleanup Using AWS Lambda for Cost Optimization</h3>
+      <ul>
+        <li>Automated the deletion of stale EBS snapshots not associated with any EC2 volumes by implementing an AWS Lambda function using Python and Boto3, enhancing cost efficiency.</li>
+        <li>Configured CloudWatch Events to trigger the Lambda function and created IAM policies with least privileges to ensure secure and event-driven snapshot cleanup.</li>
+      </ul>
+
+      <h3>CI/CD Pipeline Implementation for Python Flask Application</h3>
+      <ul>
+        <li>Continuous Integration: Implemented a CI pipeline using AWS CodeBuild, GitHub, and Docker to automate builds, tested by committing and pushing changes.</li>
+        <li>Continuous Deployment: Configured AWS CodePipeline and CodeDeploy for automated application updates.</li>
+      </ul>
+
+      <h3>Scalable VPC Deployment with Secure Bastion Host Access</h3>
+      <ul>
+        <li>Created a VPC and deployed servers across two Availability Zones for resilience, utilizing an autoscaling group in private subnets and an Application Load Balancer (ALB) in public subnets.</li>
+        <li>Configured NAT Gateways in public subnets for EC2 instances in private subnets to connect to the internet and implemented a Bastion host to access EC2 instances in private subnets.</li>
+        <li>Replicated the architecture using Terraform for rapid and consistent deployment.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Activities</h2>
+      <ul>
+        <li><strong>Webinar Speaker:</strong> Conducted a hands-on Git/GitHub workshop and delivered a keynote on Version Control in project development and Open Source tech to college students.</li>
+        <li><strong>Smart India Hackathon 2022:</strong> Presented Blockchain solutions for Emergency Management to National Disaster Response Force (NDRF), advancing to the grand finale of India's largest Hackathon.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; Faraz Hussain</p>
+  </footer>
+</body>
+</html>
