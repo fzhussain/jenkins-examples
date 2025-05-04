@@ -1,5 +1,5 @@
 services:
   django-app:
-    image: fzhussain/simple-django-app-via-jenkins:latest
+    image: fzhussain/faraz-simple-django-app-via-jenkins:latest
     ports:
       - "8000:8000"
