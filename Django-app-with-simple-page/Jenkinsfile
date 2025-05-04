@@ -1,0 +1,47 @@
+pipeline {
+    agent {label "faraz-slave-label"}
+    
+    stages {
+        stage("Clone from SCM") {
+            steps {
+                echo "Cloning start ->"
+                git url: "https://github.com/fzhussain/jenkins-examples.git", branch: "main" 
+                sh "ls -lrt"
+                echo "Code cloning successfull!"
+            }
+        }
+        stage("Build docker image") {
+            steps {
+                echo "Building docker image"
+                sh "ls -lrt"
+                sh "cd Django-app-with-simple-page && docker build -t faraz-simple-django-app-via-jenkins:latest ."
+                sh "docker images"
+                echo "Build successfull"    
+            }
+        }
+        stage("Push to Docker registry"){
+            steps {
+                echo "Pushing to docker registry"
+                withCredentials ([
+                    usernamePassword("credentialsId": "dockerhubCred",
+                    passwordVariable: "dockerHubPass",
+                    usernameVariable: "dockerHubUsername"
+                    )    
+                ]) {
+                    sh "docker login -u ${env.dockerHubUsername} -p ${env.dockerHubPass}"
+                    sh "docker image tag faraz-simple-django-app-via-jenkins:latest ${env.dockerHubUsername}/faraz-simple-django-app-via-jenkins:latest"
+                    sh "docker push ${env.dockerHubUsername}/faraz-simple-django-app-via-jenkins:latest"
+                    echo "Pushed to registry!"
+                }
+            }
+        } 
+        stage("Deploy") {
+            steps {
+                echo "Running the docker container"
+                sh "cd Django-app-with-simple-page && docker compose up -d"
+                echo "Docker container running"
+                sh "docker ps -a"
+            }
+        }
+    }
+}
