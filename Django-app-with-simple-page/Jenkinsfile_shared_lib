@@ -1,0 +1,54 @@
+@Library("Faraz Shared Library") _
+
+pipeline {
+    agent {label "faraz-slave-label"}
+    
+    stages {
+        stage("Greet") {
+            steps {
+                script {
+                    hello()
+                }
+            }
+        }
+
+        stage("Clone from SCM") {
+            steps {
+                script {
+                    echo "Flow - pipeline ->"
+                    clone("https://github.com/fzhussain/jenkins-examples.git", "main")
+                    echo "Flow - pipeline! Done"
+                }
+            }
+        }
+        
+        stage("Build docker image") {
+            steps {
+                sh "ls -lrt"
+                script {
+                    build("Django-app-with-simple-page", "fzhussain", "faraz-simple-django-app-via-jenkins", "latest")
+                }
+                sh "docker images"
+                echo "Build successfull"    
+            }
+        }
+        
+        stage("Push to Docker registry"){
+            steps {
+                script {
+                    push("faraz-simple-django-app-via-jenkins", "latest")
+                }
+            }
+        }
+        
+        stage("Deploy") {
+            steps {
+                echo "Running the docker container"
+                script {
+                    deploy("Django-app-with-simple-page")
+                }
+                sh "docker ps -a"
+            }
+        }
+    }
+}
